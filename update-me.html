@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Update Me — Bean There</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ---------- Color palette & base setup ---------- */
+:root {
+  --espresso: #2B1E1A;
+  --roasted: #4A3525;
+  --latte: #CDB39A;
+  --oatmilk: #F4EBE1;
+  --vanilla: #FAF6F0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: var(--vanilla);
+  color: var(--espresso);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Space Mono', monospace;
+  color: var(--roasted);
+  margin-bottom: 12px;
+}
+
+p {
+  margin-bottom: 12px;
+}
+
+/* ---------- Header & nav ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: var(--oatmilk);
+  border-bottom: 3px solid var(--espresso);
+}
+
+.brand {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--roasted);
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  color: var(--espresso);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: var(--latte);
+}
+
+/* ---------- Update Me section ---------- */
+.subscribe {
+  padding: 70px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.subscribe-card {
+  width: 100%;
+  max-width: 520px;
+  background-color: var(--oatmilk);
+  border: 2px solid var(--espresso);
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 6px 6px 0 rgba(43, 30, 26, 0.15);
+  text-align: center;
+}
+
+.subscribe-card h1 {
+  font-size: 2rem;
+}
+
+.subscribe-card .lead {
+  color: var(--roasted);
+  margin-bottom: 28px;
+}
+
+.subscribe-form {
+  display: grid;
+  gap: 16px;
+  text-align: left;
+}
+
+.field label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: var(--roasted);
+}
+
+.field input {
+  width: 100%;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  padding: 12px 14px;
+  border: 2px solid var(--latte);
+  border-radius: 8px;
+  background-color: var(--vanilla);
+  color: var(--espresso);
+  transition: border-color 0.2s ease;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--roasted);
+}
+
+.field input::placeholder {
+  color: #9a8b7c;
+}
+
+.subscribe-btn {
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 14px;
+  margin-top: 4px;
+  background-color: var(--roasted);
+  color: var(--vanilla);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.subscribe-btn:hover {
+  background-color: var(--espresso);
+  transform: scale(1.02);
+}
+
+.fine-print {
+  margin-top: 18px;
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  color: var(--roasted);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 30px 40px;
+  background-color: var(--espresso);
+  color: var(--vanilla);
+  text-align: center;
+}
+
+footer a {
+  color: var(--latte);
+}
+
+@media (max-width: 520px) {
+  header { flex-direction: column; gap: 16px; }
+  .subscribe-card { padding: 28px; }
+}
+</style>
+</head>
+<body id="top">
+
+<header>
+  <div class="brand">Bean There</div>
+  <nav id="primaryNav">
+    <a href="index.html">Home</a>
+    <a href="how-we-rate.html">How We Rate</a>
+    <a href="connect.html">Connect with us</a>
+    <a href="update-me.html">Update Me</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="subscribe">
+    <div class="subscribe-card">
+      <h1>Update Me</h1>
+      <p class="lead">One email a month: new café finds, ratings, and the odd coffee ramble. No spam, ever.</p>
+
+      <form class="subscribe-form" action="#" method="post">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="rene">
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="rene.b@example.com">
+        </div>
+
+        <button type="submit" class="subscribe-btn">Keep Me Posted</button>
+      </form>
+
+      <p class="fine-print">We'll only use your email to send the monthly guide.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Bean There — field-tested, one cup at a time.</p>
+  <p><a href="index.html">Back to Home</a></p>
+</footer>
+
+</body>
+</html>

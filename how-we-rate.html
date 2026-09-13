@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How We Rate — Bean There</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ---------- Color palette & base setup ---------- */
+:root {
+  --espresso: #2B1E1A;   /* dark text */
+  --roasted: #4A3525;    /* headings, buttons */
+  --latte: #CDB39A;      /* card background */
+  --oatmilk: #F4EBE1;    /* light background */
+  --vanilla: #FAF6F0;    /* page background */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: var(--vanilla);
+  color: var(--espresso);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Space Mono', monospace;
+  color: var(--roasted);
+  margin-bottom: 12px;
+}
+
+p {
+  margin-bottom: 12px;
+}
+
+/* ---------- Header & nav ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: var(--oatmilk);
+  border-bottom: 3px solid var(--espresso);
+}
+
+.brand {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--roasted);
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  color: var(--espresso);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: var(--latte);
+}
+
+/* ---------- Rate section ---------- */
+.rate {
+  background-color: var(--espresso);
+  color: var(--vanilla);
+  padding: 70px 40px;
+}
+
+.rate h1 {
+  font-size: 2.2rem;
+  color: var(--vanilla);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.rate .lead {
+  max-width: 480px;
+  color: var(--latte);
+}
+
+.rate hr {
+  border: none;
+  border-top: 1px solid var(--roasted);
+  margin: 28px 0 40px 0;
+}
+
+/* ---------- Steps grid ---------- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.step {
+  border-top: 1px solid var(--roasted);
+  padding-top: 20px;
+}
+
+.step .num {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  color: var(--latte);
+  margin-bottom: 16px;
+}
+
+.step h3 {
+  color: var(--vanilla);
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.step p {
+  color: var(--latte);
+  margin-bottom: 0;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 30px 40px;
+  background-color: var(--espresso);
+  color: var(--vanilla);
+  text-align: center;
+  border-top: 1px solid var(--roasted);
+}
+
+footer a {
+  color: var(--latte);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 800px) {
+  .steps {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  header {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body id="top">
+
+<header>
+  <div class="brand">Bean There</div>
+  <nav id="primaryNav">
+    <a href="index.html">Home</a>
+    <a href="how-we-rate.html">How We Rate</a>
+    <a href="connect.html">Connect with us</a>
+    <a href="update-me.html">Update Me</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="rate">
+    <h1>How We Rate a Cafe</h1>
+    <p class="lead">Every badge on this guide is earned the same way, in this order, every visit.</p>
+
+    <hr>
+
+    <div class="steps">
+
+      <article class="step">
+        <p class="num">01</p>
+        <h3>The First Sip</h3>
+        <p>Black coffee first. No sugar, no distractions. We want to taste what the café is really serving.</p>
+      </article>
+
+      <article class="step">
+        <p class="num">02</p>
+        <h3>The Wait</h3>
+        <p>Good coffee deserves a little patience. We notice how the café handles the rush without letting quality disappear.</p>
+      </article>
+
+      <article class="step">
+        <p class="num">03</p>
+        <h3>The Seat Test</h3>
+        <p>A café should feel worth staying in. We look at the comfort, atmosphere, and whether two hours somehow feels like twenty minutes.</p>
+      </article>
+
+      <article class="step">
+        <p class="num">04</p>
+        <h3>The Comeback</h3>
+        <p>Would we return without a reason? No plans, no occasion just a random day and a craving for that same cup. That's the score that matters.</p>
+      </article>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Bean There — field-tested, one cup at a time.</p>
+  <p><a href="index.html">Back to Home</a></p>
+</footer>
+
+</body>
+</html>

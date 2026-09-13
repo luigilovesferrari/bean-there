@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Bean There</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ---------- Color palette & base setup ---------- */
+:root {
+  --espresso: #2B1E1A;   /* dark text */
+  --roasted: #4A3525;    /* headings, buttons */
+  --latte: #CDB39A;      /* card background */
+  --oatmilk: #F4EBE1;    /* light background */
+  --vanilla: #FAF6F0;    /* page background */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: var(--vanilla);
+  color: var(--espresso);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 6px;
+}
+
+h1, h2, h3 {
+  font-family: 'Space Mono', monospace;
+  color: var(--roasted);
+  margin-bottom: 12px;
+}
+
+p {
+  margin-bottom: 12px;
+}
+
+/* ---------- Header & nav ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: var(--oatmilk);
+  border-bottom: 3px solid var(--espresso);
+}
+
+.brand {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--roasted);
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  color: var(--espresso);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: var(--latte);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 40px;
+}
+
+.hero img {
+  flex: 1;
+}
+
+.hero div {
+  flex: 1;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 24px;
+  background-color: var(--roasted);
+  color: var(--vanilla);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--espresso);
+}
+
+/* ---------- General section spacing ---------- */
+section {
+  padding: 50px 40px;
+}
+
+section:nth-of-type(odd) {
+  background-color: var(--oatmilk);
+}
+
+/* ---------- Card grid (guide) ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.card {
+  background-color: var(--latte);
+  border: 2px solid var(--espresso);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 4px 4px 0 rgba(43, 30, 26, 0.15);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  background-color: var(--oatmilk);
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 0 rgba(43, 30, 26, 0.25);
+}
+
+.card .loc {
+  font-size: 0.85rem;
+  color: var(--roasted);
+  font-weight: 600;
+}
+
+/* ---------- Team grid ---------- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.team-member img {
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 30px 40px;
+  background-color: var(--espresso);
+  color: var(--vanilla);
+  text-align: center;
+}
+
+</style>
+</head>
+<body id="top">
+
+<header>
+  <div class="brand">Bean There</div>
+  <nav id="primaryNav">
+    <a href="index.html">Home</a>
+    <a href="how-we-rate.html">How We Rate</a>
+    <a href="connect.html">Connect with us</a>
+    <a href="update-me.html">Update Me</a>
+  </nav>
+</header>
+
+<main>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Bean There started with five friends, a shared love for coffee, and plenty of opinions about which cafés were actually worth visiting. Instead of debating over favorites, we decided to visit them ourselves and let every cup speak for itself.</p>
+    <p>We explore cafés for more than just their coffee. We look at the atmosphere, the comfort, the little details, and the overall experience that makes a place memorable.</p>
+    <p>No paid favorites. No complicated formulas. Just five friends, honest opinions, and a growing list of cafés worth discovering.</p>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <p>&copy; 2026 Bean There — field-tested, one cup at a time.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bean There — Coffee Shop Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ---------- Color palette & base setup ---------- */
+:root {
+  --espresso: #2B1E1A;   /* dark text */
+  --roasted: #4A3525;    /* headings, buttons */
+  --latte: #CDB39A;      /* card background */
+  --oatmilk: #F4EBE1;    /* light background */
+  --vanilla: #FAF6F0;    /* page background */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: var(--vanilla);
+  color: var(--espresso);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 6px;
+}
+
+h1, h2, h3 {
+  font-family: 'Space Mono', monospace;
+  color: var(--roasted);
+  margin-bottom: 12px;
+}
+
+p {
+  margin-bottom: 12px;
+}
+
+/* ---------- Header & nav ---------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: var(--oatmilk);
+  border-bottom: 3px solid var(--espresso);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--roasted);
+}
+
+.brand img {
+  height: 36px;
+  width: auto;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  color: var(--espresso);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: var(--latte);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 40px;
+}
+
+.hero img {
+  flex: 1;
+  width: 500px;
+  height: 350px;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.hero div {
+  flex: 1;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 24px;
+  background-color: var(--roasted);
+  color: var(--vanilla);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--espresso);
+}
+
+/* ---------- General section spacing ---------- */
+section {
+  padding: 50px 40px;
+}
+
+section:nth-of-type(odd) {
+  background-color: var(--oatmilk);
+}
+
+/* ---------- Card grid (guide) ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.card {
+  display: block;
+  position: relative;
+  background-color: var(--latte);
+  border: 2px solid var(--espresso);
+  border-left: 6px solid var(--roasted);
+  border-right: 6px solid var(--roasted);
+  border-radius: 8px;
+  padding: 16px;
+  padding-right: 88px;
+  color: var(--espresso);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover h3 {
+  text-decoration: underline;
+}
+
+.card:hover {
+  background-color: var(--oatmilk);
+}
+
+/* Icon in the upper-right of each guide card */
+.card-icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  border: 4px solid var(--latte);
+  background-color: var(--roasted);
+  color: var(--vanilla);
+  overflow: hidden;
+}
+
+/* Card icon */
+.card-icon-img {
+  background-color: #fff;
+}
+
+.card-icon-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.card h3 a {
+  color: var(--roasted);
+  text-decoration: none;
+}
+
+.card h3 a:hover {
+  text-decoration: underline;
+}
+
+.card .loc {
+  font-size: 0.85rem;
+  color: var(--roasted);
+  font-weight: 600;
+}
+
+/* ---------- Team grid ---------- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+  text-align: center;
+}
+
+/* 3 circles on the first row */
+.team-member {
+  grid-column: span 2;
+}
+
+/* 2 circles centered second row */
+.team-member:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.team-member:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+.team-member img {
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 30px 40px;
+  background-color: var(--espresso);
+  color: var(--vanilla);
+  text-align: center;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-nav a {
+  color: var(--vanilla);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--latte);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 700px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand"><img src="images/icon-header.png" alt="Bean There logo">Bean There</div>
+  <nav>
+    <a href="about.html">About</a>
+    <a href="how-we-rate.html">How We Rate</a>
+    <a href="connect.html">Connect with us</a>
+    <a href="update-me.html">Update Me</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <img src="images/big-hero.png" alt="Bean There hero — coffee scene">
+    <div>
+      <h1>Good coffee doesn't hide — you just need the right map.</h1>
+      <p>A café guide where honest reviews and real experiences help you discover your next favorite coffee spot.</p>
+      <a href="#guide" class="btn">Browse the Guide</a>
+    </div>
+  </section>
+
+  <section id="guide">
+    <h2>The Field Guide</h2>
+    <p>Six of our favorite spots, sorted by what kind of coffee hunt you're on today.</p>
+
+    <div class="card-grid">
+
+      <a class="card" href="cafe-don-macchiatos.html">
+        <span class="card-icon card-icon-img">
+          <img src="images/don-macchiatos.png" alt="Don Macchiatos logo">
+        </span>
+        <h3>Don Macchiatos</h3>
+        <p>A cozy café with deep armchairs, quiet spaces, and a smooth, nutty house blend.</p>
+      </a>
+
+      <a class="card" href="cafe-emmanuel.html">
+        <span class="card-icon card-icon-img">
+          <img src="images/emmanuels-cafe.png" alt="Emmanuel's Cafe logo">
+        </span>
+        <h3>Emmanuel's Cafe</h3>
+        <p>A quick coffee stop serving a rich cortado for those who need great coffee on the go.</p>
+      </a>
+
+      <a class="card" href="cafe-wraps-coffee.html">
+        <span class="card-icon card-icon-img">
+          <img src="images/wraps-coffee.png" alt="Wraps Coffee logo">
+        </span>
+        <h3>Wraps Coffee</h3>
+        <p>A friendly shared-table café with freshly rotating filter coffee that always brings something new.</p>
+      </a>
+
+      <a class="card" href="cafe-lot-62.html">
+        <span class="card-icon card-icon-img">
+          <img src="images/lot-62.png" alt="Lot 62 Cafe logo">
+        </span>
+        <h3>Lot 62</h3>
+        <p>A hidden café worth the drive, with freshly roasted beans and an aroma that makes every visit memorable.</p>
+      </a>
+
+      <a class="card" href="cafe-sans-cafe.html">
+        <span class="card-icon card-icon-img">
+          <img src="images/sans-cafe.png" alt="San's Cafe logo">
+        </span>
+        <h3>Sans Cafe</h3>
+        <p>A bright and welcoming café serving espresso that stays delicious even with oat milk.</p>
+      </a>
+
+      <a class="card" href="cafe-big-d.html">
+        <span class="card-icon card-icon-img">
+          <img src="images/big-d.png" alt="Big D. Coffee & Tea Hub logo">
+        </span>
+        <h3>Big D. Coffee & Tea Hub</h3>
+        <p>A relaxing spot by the water offering slow-steeped cold brew and tempting pastries.</p>
+      </a>
+
+    </div>
+  </section>
+
+  <section id="how we rate">
+    <h2>Behind the Scenes</h2>
+    <p>The crew doing the tasting, typing, and occasional over-caffeinating.</p>
+
+    <div class="team-grid">
+
+      <article class="team-member">
+        <img src="images/cantalejo.png" alt="Portrait of Andrea Janelle Cantalejo">
+        <h3>Cantalejo, Andrea Janelle A.</h3>
+      </article>
+
+      <article class="team-member">
+        <img src="images/galang.png" alt="Portrait of Francine Kaye Galang">
+        <h3>Galang, Francine Kaye P.</h3>
+      </article>
+
+      <article class="team-member">
+        <img src="images/peria.png" alt="Portrait of Aizel Keith Peria">
+        <h3>Peria, Aizel Keith M.</h3>
+      </article>
+
+      <article class="team-member">
+        <img src="images/san-pedro.png" alt="Portrait of Arrianne San Pedro">
+        <h3>San Pedro, Arrianne M.</h3>
+      </article>
+
+      <article class="team-member">
+        <img src="images/santibanez.png" alt="Portrait of Joann Santibañez">
+        <h3>Santibañez, Joann G.</h3>
+      </article>
+
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <p>&copy; 2026 Bean There — field-tested, one cup at a time.</p>
+</footer>
+
+</body>
+</html>
