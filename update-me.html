@@ -210,7 +210,7 @@ footer a {
       <h1>Update Me</h1>
       <p class="lead">One email a month: new café finds, ratings, and the odd coffee ramble. No spam, ever.</p>
 
-      <form class="subscribe-form" action="#" method="post">
+      <form class="subscribe-form" onsubmit="return false;">
         <div class="field">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" placeholder="rene">
@@ -218,10 +218,10 @@ footer a {
 
         <div class="field">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="rene.b@example.com">
+          <input type="text" id="email" name="email" placeholder="rene.b@example.com">
         </div>
 
-        <button type="submit" class="subscribe-btn">Keep Me Posted</button>
+        <button type="button" class="subscribe-btn">Keep Me Posted</button>
       </form>
 
       <p class="fine-print">We'll only use your email to send the monthly guide.</p>
